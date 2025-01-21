@@ -6,12 +6,11 @@ import java.io.InputStream;
 public class ClienteTCPINB {
     public static void main(String[] args) {
         try {
-            // Criar uma instância de ClubesInputStream com a entrada padrão (System.in)
+            
             InputStream inputStream = System.in;
             try (ClubesInputStream clubesInputStream = new ClubesInputStream(inputStream)) {
                 Clube[] clubes = clubesInputStream.lerClubes();
-                
-                // Imprimir os dados dos clubes
+             
                 for (Clube clube : clubes) {
                     if (clube != null) {
                         System.out.println("Nome do clube: " + clube.getNome());

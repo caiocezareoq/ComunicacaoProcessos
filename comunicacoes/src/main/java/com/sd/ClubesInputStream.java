@@ -10,7 +10,7 @@ public class ClubesInputStream extends InputStream{
     private InputStream inputStream;
     private BufferedReader reader;
     
-    // Construtor que recebe a origem dos dados
+    
     public ClubesInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
         this.reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
@@ -21,15 +21,15 @@ public class ClubesInputStream extends InputStream{
         return inputStream.read();
     }
 
-    // Método para ler os dados dos clubes
+  /
     public Clube[] lerClubes() throws IOException {
-        // Leitura dos dados
+        
         String linha;
-        Clube[] clubes = new Clube[3]; // Vamos limitar a leitura a 3 clubes para este exemplo
+        Clube[] clubes = new Clube[3];
         int i = 0;
         
         while ((linha = reader.readLine()) != null && i < clubes.length) {
-            // Aqui você deve implementar a lógica de parsing das linhas para criar os objetos Clube
+            
             String[] partes = linha.split(",");
             if (partes.length >= 4) {
                 String nome = partes[0].trim();

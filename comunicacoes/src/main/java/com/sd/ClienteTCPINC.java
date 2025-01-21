@@ -6,14 +6,14 @@ import java.io.InputStream;
 
 public class ClienteTCPINC {
     public static void main(String[] args) {
-        String arquivo = "clubes.txt"; // O caminho do arquivo com os dados
+        String arquivo = "clubes.txt"; 
         try {
-            // Criar uma instância de ClubesInputStream com FileInputStream
+            
             InputStream inputStream = new FileInputStream(arquivo);
             try (ClubesInputStream clubesInputStream = new ClubesInputStream(inputStream)) {
                 Clube[] clubes = clubesInputStream.lerClubes();
                 
-                // Imprimir os dados dos clubes
+                
                 for (Clube clube : clubes) {
                     if (clube != null) {
                         System.out.println("Nome do clube: " + clube.getNome());

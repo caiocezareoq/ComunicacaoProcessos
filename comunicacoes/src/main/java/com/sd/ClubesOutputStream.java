@@ -10,14 +10,14 @@ public class ClubesOutputStream implements AutoCloseable {
     private Clube[] clubes;
     private BufferedWriter writer;
 
-    // Construtor que recebe o array de clubes e o OutputStream
+    
     public ClubesOutputStream(Clube[] clubes, OutputStream outputStream) {
         this.clubes = clubes;
-        // Inicializando o BufferedWriter para escrita de texto
+        
         this.writer = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
     }
 
-    // Método para enviar os dados dos clubes
+   
     public void enviarClubes() throws IOException {
         writer.write("Número de clubes: " + clubes.length);
         writer.newLine();
@@ -34,13 +34,13 @@ public class ClubesOutputStream implements AutoCloseable {
             writer.newLine();
         }
 
-        writer.flush(); // Certifique-se de que os dados sejam enviados
+        writer.flush();
     }
 
     @Override
     public void close() {
         try {
-            // Fechar o BufferedWriter
+            
             if (writer != null) {
                 writer.close();
             }

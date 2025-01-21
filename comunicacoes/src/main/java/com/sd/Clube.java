@@ -4,7 +4,7 @@ class Clube {
     private String nome;
     private String campeonato;
     private int numeroSocios;
-    private Federacao federacao; // Agregação
+    private Federacao federacao; 
 
     public Clube(String nome, String campeonato, int numeroSocios, Federacao federacao) {
         this.nome = nome;
