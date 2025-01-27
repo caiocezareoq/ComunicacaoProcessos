@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class ServidorTCPOUT {
     public static void main(String[] args) {
-        int porta = 54321;
+        int porta = 52421;
 
         try (ServerSocket serverSocket = new ServerSocket(porta)) {
             System.out.println("Servidor escutando na porta " + porta + "...");

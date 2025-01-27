@@ -6,11 +6,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-public class ClubesInputStream extends InputStream{
+public class ClubesInputStream extends InputStream {
     private InputStream inputStream;
     private BufferedReader reader;
-    
-    
+
     public ClubesInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
         this.reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
@@ -21,15 +20,12 @@ public class ClubesInputStream extends InputStream{
         return inputStream.read();
     }
 
-  /
     public Clube[] lerClubes() throws IOException {
-        
         String linha;
         Clube[] clubes = new Clube[3];
         int i = 0;
-        
+
         while ((linha = reader.readLine()) != null && i < clubes.length) {
-            
             String[] partes = linha.split(",");
             if (partes.length >= 4) {
                 String nome = partes[0].trim();
@@ -42,5 +38,15 @@ public class ClubesInputStream extends InputStream{
             }
         }
         return clubes;
+    }
+
+    public void close() throws IOException {
+        // Fechar recursos manualmente
+        if (reader != null) {
+            reader.close();
+        }
+        if (inputStream != null) {
+            inputStream.close();
+        }
     }
 }
